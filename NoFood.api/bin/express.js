@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const variables = require('../bin/configuration/variables');
 
 //routers
 const categoriaRouter = require('../routes/catergoria-router');
@@ -11,6 +13,10 @@ const app = express();
 //Configuração de parse do JSON
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+//Configurando a conexao do mongoDB
+mongoose.connect(variables.Database.connection);
+
 
 
 //Configurando as rotas
