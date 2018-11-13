@@ -1,26 +1,19 @@
 {
   "name": "nofood.api",
   "version": "1.0.0",
-  "description": "Api feita em nodeJS para utilização do nosso aplicativo NoFood",
+  "description": "Api feita em nodeJs para utilização do nosso aplicativo NoFood",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FelipeGod/hora.git"
-  },
-  "author": "Felipe",
+  "author": "Ricardo Netto",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/FelipeGod/hora/issues"
-  },
-  "homepage": "https://github.com/FelipeGod/hora#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0",
     "md5": "^2.2.1",
-    "mongoose": "^5.3.10"
+    "mongoose": "^5.2.5"
   }
 }
