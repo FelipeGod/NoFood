@@ -1,35 +1,35 @@
 'use strict'
 
-const repository = require('../repositories/categoria-repository');
+const repository = require('../repositories/usuario-repository');
 const _repo = repository();
 
-function categoriaController() {
+function usuarioController() {
 
 }
 
-categoriaController.prototype.post = async (req, res) => {
+usuarioController.prototype.post = async (req, res) => {
     let resultado = await _repo.create(req.body);
     res.status(201).send(resultado);
 };
 
-categoriaController.prototype.put = async (req, res) => {
+usuarioController.prototype.put = async (req, res) => {
     let resultado = await _repo.update(req.param.id, req.params.body);
     res.status(202).send(resultado);
 };
 
-categoriaController.prototype.get = async (req, res) => {
+usuarioController.prototype.get = async (req, res) => {
     let lista = await _repo.getAll();
     res.status(200).send(lista);
 };
 
-categoriaController.prototype.getById = async (req, res) => {
+usuarioController.prototype.getById = async (req, res) => {
     let resultado = await _repo.getById(req.params.id);
     res.status(200).send(resultado);
 };
 
-categoriaController.prototype.delete = async (req, res) => {
+usuarioController.prototype.delete = async (req, res) => {
     let deletado = await _repo.delete(req.params.id);
     res.status(204).send(deletado);
 };
 
-module.exports = categoriaController;
+module.exports = usuarioController;

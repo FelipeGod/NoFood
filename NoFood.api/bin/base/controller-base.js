@@ -12,11 +12,11 @@ exports.post = async(repository, validationContract, req, res) => {
 
     } catch (err) {
         console.log('Post com erro, motivo', err);
-        res.status(500).send({ message: 'Erro no processamento', error: err })
+        res.status(500).send({ message: 'Erro no processamento', errors: err })
         
     }
 };
-exports.put = async(repository, validationContract, req, res) => {
+exports.put = async(repository, validationContract, req, res) => {  
     try {
         let data = req.body;
 
@@ -30,7 +30,7 @@ exports.put = async(repository, validationContract, req, res) => {
 
     } catch (err) {
         console.log('Put com erro, motivo', err);
-        res.status(500).send({ message: 'Erro no processamento', error: err })
+        res.status(500).send({ message: 'Erro no processamento', errors: err })
 
     }
 };
