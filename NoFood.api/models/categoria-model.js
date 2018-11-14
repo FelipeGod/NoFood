@@ -5,15 +5,15 @@ const schema = mongoose.Schema;
 
 const categoriaModel = new schema({
     titulo: { trim: true, index: true, required: true, type: String },
-    descricao: { type: String, required: true },
+    descricao: { type: String },
     foto: { type: String, required: true },
     ativa: { type: Boolean, required: true },
     dataCriacao: { type: Date, default: Date.now }
-}, { versionKey: false,  });
+}, { versionKey: false });
 
 categoriaModel.pre('save', next => {
     let agora = new Date();
-    if (!this.dataCriacaos)
+    if (!this.dataCriacao)
         this.dataCriacao = agora;
     next();
 });
