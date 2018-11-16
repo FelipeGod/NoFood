@@ -3,16 +3,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-minha-conta',
-  templateUrl: 'minha-conta.html',
+  selector: 'page-tab-categoria',
+  templateUrl: 'tab-categoria.html',
 })
-export class MinhaContaPage {
+export class TabCategoriaPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MinhaContaPage');
+    console.log('ionViewDidLoad TabCategoriaPage');
   }
 
 }
