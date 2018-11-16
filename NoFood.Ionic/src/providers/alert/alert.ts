@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AlertController, ToastController } from 'ionic-angular';
-import { text } from '@angular/core/src/render3/instructions';
 
 @Injectable()
 export class AlertProvider {
