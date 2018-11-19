@@ -50,14 +50,14 @@ export class HttpProvider {
           console.log(err);
           if (err.status == 400) {
             let msg = '';
-            err.error.errors.forEach(_err => {
+            err.error.validation.forEach(_err => {
               msg += `<li>${ _err.message }</li>`
             });
-            this.alerSrv.alert('Informação', msg);
+            this.alerSrv.alert(err.error.message, msg);
+          }else{
+            this.alerSrv.toast('Não foi possível realizar o processamento da informação, verifique sua conexão e tente novamente', 'bottom');
+            resolve({ success: false, data: undefined, err: err });
           }
-          
-          this.alerSrv.toast('Não foi possível realizar o processamento da informação, verifique sua conexão e tente novamente', 'bottom');
-          resolve({ success: false, data: undefined, err: err })
         });
       } else {
         this.alerSrv.toast('Você está offline, e infelizmente não pode ser enviado os dados!', 'bottom');
@@ -79,13 +79,16 @@ export class HttpProvider {
             console.log(err);
             if (err.status == 400) {
               let msg = '';
-              err.error.errors.forEach(_err => {
+              err.error.validation.forEach(_err => {
                 msg += `<li>${_err.message}</li>`
               });
-              this.alerSrv.alert('Informação', msg);
+              this.alerSrv.alert(err.error.message, msg);
+            }else if(err.status == 404){
+              this.alerSrv.alert('Informação', err.error.message);
+            }else{
+              this.alerSrv.toast('Não foi possível realizar o processamento da informação, verifique sua conexão e tente novamente', 'bottom');
+              resolve({ success: false, data: undefined, err: err });
             }
-            this.alerSrv.toast('Não foi possível realizar o processamento da informação, verifique sua conexão e tente novamente', 'bottom');
-            resolve({ success: false, data: undefined, err: err })
           });
       } else {
         this.alerSrv.toast('Você está offline, e infelizmente não pode ser enviado os dados!', 'bottom');

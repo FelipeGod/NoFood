@@ -9,6 +9,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
+    form: any = {};
+
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -21,8 +24,12 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  abrirCategoria(): void{
-    this.navCtrl.setRoot('CategoriaPage');
+  async login(): Promise<void>{
+    let result = await this.usuarioSrv.autenticate(this.form.email, this.form.senha);
+    if (result.success) {
+      console.log(result);
+      
+    }
   }
 
 }
