@@ -38,7 +38,7 @@ export class HttpProvider {
   }
 
   public post(url: string, model: any): Promise<httpResultModel> {
-    this.spinnerSrv.Show("Salvando os dados...");
+    this.spinnerSrv.Show("Carregando os dados...");
     return new Promise((resolve) => {
       if (this.networkSrv.isOnline) {
         this.http.post(url, model)
