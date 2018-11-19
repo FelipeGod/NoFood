@@ -1,4 +1,4 @@
-import { httpResultModel } from './../models/HttpResultModel';
+import { HttpResultModel } from './../models/HttpResultModel';
 import { HttpProvider } from './../../providers/http/http';
 
 export abstract class ProviderBase<T>{
@@ -8,23 +8,23 @@ export abstract class ProviderBase<T>{
         ) {
     }
 
-    get(): Promise<httpResultModel>{
+    get(): Promise<HttpResultModel>{
         return this.http.get(this.url);
     }
 
-    getById(uid: string): Promise<httpResultModel>{
+    getById(uid: string): Promise<HttpResultModel>{
         return this.http.get(`${this.url}/${ uid }`);
     }
 
-    post(model: T): Promise<httpResultModel>{
+    post(model: T): Promise<HttpResultModel>{
         return this.http.post(this.url, model);
     }
 
-    put(uid: string, model: T): Promise<httpResultModel> {
+    put(uid: string, model: T): Promise<HttpResultModel> {
         return this.http.put(`${this.url}/${uid}`, model);
     }
 
-    delete(uid: string): Promise<httpResultModel> {
+    delete(uid: string): Promise<HttpResultModel> {
         return this.http.delete(`${this.url}/${uid}`);
     }
 

@@ -2,7 +2,7 @@ import { AlertProvider } from './../alert/alert';
 import { SpinnerProvider } from './../spinner/spinner';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { httpResultModel } from '../../app/models/HttpResultModel';
+import { HttpResultModel } from '../../app/models/HttpResultModel';
 import { NetworkProvider } from '../network/network';
 
 @Injectable()
@@ -17,7 +17,7 @@ export class HttpProvider {
     
   }
 
-  public get(url: string): Promise<httpResultModel>{
+  public get(url: string): Promise<HttpResultModel>{
     this.spinnerSrv.Show("Carregando os dados...");
     return  new Promise((resolve) => {
       if (this.networkSrv.isOnline) {
@@ -37,7 +37,7 @@ export class HttpProvider {
     })
   }
 
-  public post(url: string, model: any): Promise<httpResultModel> {
+  public post(url: string, model: any): Promise<HttpResultModel> {
     this.spinnerSrv.Show("Carregando os dados...");
     return new Promise((resolve) => {
       if (this.networkSrv.isOnline) {
@@ -66,7 +66,7 @@ export class HttpProvider {
     })
   }
 
-  public put(url: string, model: any): Promise<httpResultModel> {
+  public put(url: string, model: any): Promise<HttpResultModel> {
     this.spinnerSrv.Show("Atualizando os dados...");
     return new Promise((resolve) => {
       if (this.networkSrv.isOnline) {
@@ -97,7 +97,7 @@ export class HttpProvider {
     })
   }
 
-  public delete(url: string): Promise<httpResultModel> {
+  public delete(url: string): Promise<HttpResultModel> {
     this.spinnerSrv.Show("Removendo registro...");
     return new Promise((resolve) => {
       if (this.networkSrv.isOnline) {
