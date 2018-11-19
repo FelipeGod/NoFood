@@ -3,7 +3,7 @@ import { HttpProvider } from './../http/http';
 import { UsuarioModel } from './../../app/models/usuarioModel';
 import { Injectable } from '@angular/core';
 import { ProviderBase } from '../../app/base/provider-base';
-import { httpResultModel } from '../../app/models/HttpResultModel';
+import { HttpResultModel } from '../../app/models/HttpResultModel';
 
 @Injectable()
 export class UsuarioProvider extends ProviderBase<UsuarioModel>{
@@ -14,12 +14,23 @@ export class UsuarioProvider extends ProviderBase<UsuarioModel>{
     super(`${ConfigHelper.Url}usuario`, http);
   }
 
-  async autenticate(email: string, senha: string): Promise<httpResultModel>{
-    return this.http.post(`${ this.url }/autenticar`, { email: email, senha: senha });
+  async autenticate(email: string, senha: string): Promise<HttpResultModel> {
+    return this.http.post(`${this.url}/autenticar`, { email: email, senha: senha });
   }
 
-  async register(usuario: UsuarioModel): Promise<httpResultModel>{
-    return this.http.post(`${this.url}/autenticar`, usuario);
+  async register(usuario: UsuarioModel): Promise<HttpResultModel> {
+    return this.http.post(`${this.url}/register`, usuario);
   }
+
+  static RegisterLogin(result: any){
+    localStorage.setItem(ConfigHelper.storageKeys.token, result.token);
+    localStorage.setItem(ConfigHelper.storageKeys.user, JSON.stringify(result.usuario));
+  }
+
+  static get isLogado(): boolean{
+    return (localStorage.getItem(ConfigHelper.storageKeys.token) != undefined);
+  }
+
+
 
 }

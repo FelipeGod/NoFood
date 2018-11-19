@@ -1,4 +1,3 @@
-import { CadastroPage } from './../cadastro/cadastro';
 import { UsuarioProvider } from './../../providers/usuario/usuario';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -21,7 +20,8 @@ export class LoginPage {
   async login(): Promise<void>{
     let result = await this.usuarioSrv.autenticate(this.form.email, this.form.senha);
     if (result.success) {
-      //enviar para rota certa      
+      UsuarioProvider.RegisterLogin(result.data);
+      this.navCtrl.setRoot('CategoriaPage');
     }
   }
 
