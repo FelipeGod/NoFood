@@ -1,0 +1,31 @@
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+
+@IonicPage()
+@Component({
+  selector: 'page-tabs',
+  templateUrl: 'tabs.html',
+})
+export class TabsPage {
+
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public app: App
+  ) {
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad TabsPage');
+  }
+
+  selectionarCategoria(event): void{
+    let navegacaoAnterior = event.linker._history[event.linker._history.length - 2];
+    let nomeTab = event.tabTitle;
+
+    if (nomeTab == 'Categorias' && navegacaoAnterior != '/categoria') {
+      this.app.getRootNav().setRoot('CategoriaPage');
+    }
+    
+  }
+
+}

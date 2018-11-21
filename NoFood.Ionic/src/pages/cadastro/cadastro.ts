@@ -4,12 +4,14 @@ import { UsuarioModel } from './../../app/models/usuarioModel';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
 @IonicPage()
 @Component({
   selector: 'page-cadastro',
   templateUrl: 'cadastro.html',
 })
 export class CadastroPage {
+
   usuario: UsuarioModel = new UsuarioModel();
 
   constructor(
@@ -17,10 +19,11 @@ export class CadastroPage {
     public navParams: NavParams,
     private usuarioSrv: UsuarioProvider,
     private alertSrv: AlertProvider
-    ) {
+  ) {
+
   }
 
-  async cadastrar(): Promise<void>{
+  async cadastrar(): Promise<void> {
     let cadastroResult = await this.usuarioSrv.register(this.usuario);
     if (cadastroResult.success) {
       this.alertSrv.toast('Cadastro realizado com sucesso!', 'bottom');
@@ -28,7 +31,7 @@ export class CadastroPage {
     }
   }
 
-  cancelar(){
+  cancelar() {
     this.navCtrl.setRoot('LoginPage');
   }
 

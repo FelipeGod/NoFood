@@ -1,11 +1,11 @@
-import { HttpProvider } from './../http/http';
 import { Injectable } from '@angular/core';
-import { ProviderBase } from '../../app/base/provider-base';
+import { ProviderBase } from '../../app/base/providerBase';
 import { CategoriaModel } from '../../app/models/categoriaModel';
-import { ConfigHelper } from '../../app/helpers/confighelper';
+import { ConfigHelper } from '../../app/helpers/configHelper';
+import { HttpProvider } from '../http/http';
 
 @Injectable()
-export class CategoriaProvider extends ProviderBase<CategoriaModel>{
+export class CategoriaProvider extends ProviderBase<CategoriaModel> {
 
   url: string = `${ConfigHelper.Url}categoria`;
 

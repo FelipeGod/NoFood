@@ -1,8 +1,8 @@
-import { ConfigHelper } from './../../app/helpers/confighelper';
-import { HttpProvider } from './../http/http';
-import { UsuarioModel } from './../../app/models/usuarioModel';
 import { Injectable } from '@angular/core';
-import { ProviderBase } from '../../app/base/provider-base';
+import { ProviderBase } from '../../app/base/providerBase';
+import { UsuarioModel } from '../../app/models/usuarioModel';
+import { HttpProvider } from '../http/http';
+import { ConfigHelper } from '../../app/helpers/configHelper';
 import { HttpResultModel } from '../../app/models/HttpResultModel';
 
 @Injectable()
@@ -22,19 +22,20 @@ export class UsuarioProvider extends ProviderBase<UsuarioModel>{
     return this.http.post(`${this.url}/register`, usuario);
   }
 
-  static RegisterLogin(result: any){
+  static RegisterLogin(result: any) {
     localStorage.setItem(ConfigHelper.storageKeys.token, result.token);
     localStorage.setItem(ConfigHelper.storageKeys.user, JSON.stringify(result.usuario));
   }
 
-  static get GetTokenAccess(): string{
+  static get GetTokenAccess(): string {
     return localStorage.getItem(ConfigHelper.storageKeys.token);
   }
 
-  static get isLogado(): boolean{
+  static get IsLogado(): boolean {
     return (localStorage.getItem(ConfigHelper.storageKeys.token) != undefined);
   }
 
-
-
 }
+
+
+
