@@ -108,13 +108,8 @@ var LoginPage = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.usuarioSrv.autenticate(this.form.email, this.form.senha)];
                     case 1:
                         result = _a.sent();
-                        this.user = this.form.email;
-                        this.pass = this.form.senha;
                         if (result.success) {
                             __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__["a" /* UsuarioProvider */].RegisterLogin(result.data);
-                            this.navCtrl.setRoot('CategoriaPage');
-                        }
-                        else if ((this.user == 'email') && (this.pass == '123')) {
                             this.navCtrl.setRoot('CategoriaPage');
                         }
                         console.log(result);

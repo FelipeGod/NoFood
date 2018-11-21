@@ -9,13 +9,17 @@ import { HttpResultModel } from '../../app/models/HttpResultModel';
 export class UsuarioProvider extends ProviderBase<UsuarioModel>{
 
   url: string = `${ConfigHelper.Url}usuario`;
+  
 
   constructor(public http: HttpProvider) {
     super(`${ConfigHelper.Url}usuario`, http);
   }
 
   async autenticate(email: string, senha: string): Promise<HttpResultModel> {
-    return this.http.post(`${this.url}/autenticar`, { email: email, senha: senha });
+    let resultado = this.http.post(`${this.url}/autenticar`, { email: email, senha: senha });
+    console.log('Aqui ', resultado);
+    return resultado;
+    
   }
 
   async register(usuario: UsuarioModel): Promise<HttpResultModel> {

@@ -181,8 +181,8 @@ var ProviderBase = /** @class */ (function () {
 var ConfigHelper = /** @class */ (function () {
     function ConfigHelper() {
     }
-    // public static Url: string = '/v1/'
-    ConfigHelper.Url = 'http://localhost:3000/api/';
+    ConfigHelper.Url = '/v1/';
+    // public static Url: string = 'http://localhost:3000/api/'
     ConfigHelper.storageKeys = {
         token: 'nofood.token',
         user: 'nofood.user'
