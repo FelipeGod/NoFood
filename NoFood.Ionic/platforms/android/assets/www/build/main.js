@@ -181,8 +181,9 @@ var ProviderBase = /** @class */ (function () {
 var ConfigHelper = /** @class */ (function () {
     function ConfigHelper() {
     }
-    ConfigHelper.Url = '/v1/';
-    // public static Url: string = 'http://localhost:3000/api/'
+    ConfigHelper.Url = 'http://felipemachadodev.com.br/api/';
+    // public static Url: string = '/v1/'
+    //public static Url: string = 'http://localhost:3000/api/'
     ConfigHelper.storageKeys = {
         token: 'nofood.token',
         user: 'nofood.user'
@@ -563,7 +564,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\felipe.schultz\Desktop\NoFood.Ionic\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\felipe.schultz\Desktop\NoFood.Ionic\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);

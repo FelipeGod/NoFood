@@ -75,7 +75,7 @@ var CategoriaPage = /** @class */ (function () {
     };
     CategoriaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-categoria',template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\pages\categoria\categoria.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Categoria</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content no-padding>\n  <button ion-button block color="primary" (click)="gerenciarCategoria()">Gerenciar Categoria</button>\n</ion-content>'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\pages\categoria\categoria.html"*/,
+            selector: 'page-categoria',template:/*ion-inline-start:"C:\Users\felipe.schultz\Desktop\NoFood.Ionic\src\pages\categoria\categoria.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Categoria</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content no-padding>\n  <button ion-button block color="primary" (click)="gerenciarCategoria()">Gerenciar Categoria</button>\n</ion-content>'/*ion-inline-end:"C:\Users\felipe.schultz\Desktop\NoFood.Ionic\src\pages\categoria\categoria.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], CategoriaPage);

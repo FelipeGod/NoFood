@@ -72,7 +72,7 @@ var TabsPage = /** @class */ (function () {
     };
     TabsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tabs',template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\pages\tabs\tabs.html"*/'<ion-tabs>\n  <ion-tab tabIcon="pricetags" tabTitle="Categorias" (ionSelect)="selecionarCategoria($event)" [root]="\'ProdutosPage\'"></ion-tab>\n  <ion-tab tabIcon="menu" tabTitle="Meus Pedidos" [root]="\'MeusPedidosPage\'"></ion-tab>\n  <ion-tab tabIcon="contact" tabTitle="Minha Conta" [root]="\'MinhaContaPage\'"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\pages\tabs\tabs.html"*/,
+            selector: 'page-tabs',template:/*ion-inline-start:"C:\Users\felipe.schultz\Desktop\NoFood.Ionic\src\pages\tabs\tabs.html"*/'<ion-tabs>\n  <ion-tab tabIcon="pricetags" tabTitle="Categorias" (ionSelect)="selecionarCategoria($event)" [root]="\'ProdutosPage\'"></ion-tab>\n  <ion-tab tabIcon="menu" tabTitle="Meus Pedidos" [root]="\'MeusPedidosPage\'"></ion-tab>\n  <ion-tab tabIcon="contact" tabTitle="Minha Conta" [root]="\'MinhaContaPage\'"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"C:\Users\felipe.schultz\Desktop\NoFood.Ionic\src\pages\tabs\tabs.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],

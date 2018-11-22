@@ -1,8 +1,8 @@
 {
   "_from": "cordova-plugin-ionic-webview@^2.0.3",
-  "_id": "cordova-plugin-ionic-webview@2.2.3",
+  "_id": "cordova-plugin-ionic-webview@2.2.5",
   "_inBundle": false,
-  "_integrity": "sha512-U6ufU5VVwDZuRvv9MwFixAu37r5VnXoi15T/Fg29BTGZJRZKnQ9lsJfVKtm/uLp4ITc85/3RBubOyUkRE/SOuQ==",
+  "_integrity": "sha512-Eq1ano906pIpK2/0ZGlT99txq9+SlwPiNJNc6YxJUysIS8Nzfv6yB6Rref1ktRHi5szaVoQ5X8HCqf9Vd5Zmgg==",
   "_location": "/cordova-plugin-ionic-webview",
   "_phantomChildren": {},
   "_requested": {
@@ -19,10 +19,10 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-ionic-webview/-/cordova-plugin-ionic-webview-2.2.3.tgz",
-  "_shasum": "92d785d8dbd1b5bc40cd82acf7ae4f18af5c5828",
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-ionic-webview/-/cordova-plugin-ionic-webview-2.2.5.tgz",
+  "_shasum": "e7ba5d8906f9138fbcaeb1a79102771575856a2b",
   "_spec": "cordova-plugin-ionic-webview@^2.0.3",
-  "_where": "E:\\NoFood\\NoFood.Ionic",
+  "_where": "C:\\Users\\felipe.schultz\\Desktop\\NoFood.Ionic",
   "author": {
     "name": "Ionic Team"
   },
@@ -98,5 +98,5 @@
     "sync_plugin_xml": "sync-cordova-xml package.json plugin.xml --output=plugin.xml",
     "version": "npm run sync_plugin_xml && git add plugin.xml"
   },
-  "version": "2.2.3"
+  "version": "2.2.5"
 }

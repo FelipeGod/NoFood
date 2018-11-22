@@ -126,6 +126,8 @@
 
 @synthesize engineWebView = _engineWebView;
 
+NSTimer *timer;
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super init];
@@ -346,6 +348,10 @@
     [self keyboardDisplayDoesNotRequireUserAction];
     //}
 
+    if ([settings cordovaBoolSettingForKey:@"KeyboardAppearanceDark" defaultValue:NO]) {
+        [self setKeyboardAppearanceDark];
+    }
+
     [self updateSettings:settings];
 
     // check if content thread has died on resume
@@ -362,6 +368,17 @@
      addObserver:self
      selector:@selector(onSocketError:)
      name:@"socketInUseError" object:nil];
+
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(keyboardWillHide)
+     name:UIKeyboardWillHideNotification object:nil];
+
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(keyboardWillShow)
+     name:UIKeyboardWillShowNotification object:nil];
+
 
     NSLog(@"Using Ionic WKWebView");
 
@@ -407,6 +424,22 @@
     return string;
 }
 
+- (void)setKeyboardAppearanceDark
+{
+    IMP darkImp = imp_implementationWithBlock(^(id _s) {
+        return UIKeyboardAppearanceDark;
+    });
+    for (NSString* classString in @[@"WKContentView", @"UITextInputTraits"]) {
+        Class c = NSClassFromString(classString);
+        Method m = class_getInstanceMethod(c, @selector(keyboardAppearance));
+        if (m != NULL) {
+            method_setImplementation(m, darkImp);
+        } else {
+            class_addMethod(c, @selector(keyboardAppearance), darkImp, "l@:");
+        }
+    }
+}
+
 - (void)onReset
 {
     [self addURLObserver];
@@ -446,6 +479,31 @@ static void * KVOContext = &KVOContext;
             [self loadErrorPage:nil];
         }
     }
+}
+
+
+-(void)keyboardWillHide
+{
+    if (@available(iOS 12.0, *)) {
+        timer = [NSTimer scheduledTimerWithTimeInterval:0 target:self selector:@selector(keyboardDisplacementFix) userInfo:nil repeats:false];
+        [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    }
+}
+
+-(void)keyboardWillShow
+{
+    if (timer != nil) {
+        [timer invalidate];
+    }
+}
+
+-(void)keyboardDisplacementFix
+{
+    // https://stackoverflow.com/a/9637807/824966
+    [UIView animateWithDuration:.25 animations:^{
+        self.webView.scrollView.contentOffset = CGPointMake(0, 0);
+    }];
+
 }
 
 - (void)onSocketError:(NSNotification *)notification {

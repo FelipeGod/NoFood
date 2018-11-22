@@ -181,8 +181,9 @@ var ProviderBase = /** @class */ (function () {
 var ConfigHelper = /** @class */ (function () {
     function ConfigHelper() {
     }
-    ConfigHelper.Url = '/v1/';
-    // public static Url: string = 'http://localhost:3000/api/'
+    ConfigHelper.Url = 'http://felipemachadodev.com.br/api/';
+    // public static Url: string = '/v1/'
+    //public static Url: string = 'http://localhost:3000/api/'
     ConfigHelper.storageKeys = {
         token: 'nofood.token',
         user: 'nofood.user'
@@ -563,7 +564,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\felipe.schultz\Desktop\NoFood.Ionic\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\felipe.schultz\Desktop\NoFood.Ionic\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -651,11 +652,8 @@ var UsuarioProvider = /** @class */ (function (_super) {
     }
     UsuarioProvider.prototype.autenticate = function (email, senha) {
         return __awaiter(this, void 0, void 0, function () {
-            var resultado;
             return __generator(this, function (_a) {
-                resultado = this.http.post(this.url + "/autenticar", { email: email, senha: senha });
-                console.log('Aqui ', resultado);
-                return [2 /*return*/, resultado];
+                return [2 /*return*/, this.http.post(this.url + "/autenticar", { email: email, senha: senha })];
             });
         });
     };
@@ -686,10 +684,9 @@ var UsuarioProvider = /** @class */ (function (_super) {
     });
     UsuarioProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__http_http__["a" /* HttpProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__http_http__["a" /* HttpProvider */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__http_http__["a" /* HttpProvider */]])
     ], UsuarioProvider);
     return UsuarioProvider;
-    var _a;
 }(__WEBPACK_IMPORTED_MODULE_1__app_base_providerBase__["a" /* ProviderBase */]));
 
 //# sourceMappingURL=usuario.js.map
