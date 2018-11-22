@@ -1,12 +1,6 @@
+import { UsuarioProvider } from './../../providers/usuario/usuario';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CategoriaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -15,7 +9,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CategoriaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private UserP: UsuarioProvider,
+    private LoadingCtrl: LoadingController
+    ) {
   }
 
   ionViewDidLoad() {
@@ -24,6 +23,15 @@ export class CategoriaPage {
 
   gerenciarCategoria(): void {
     this.navCtrl.push('AdmCategoriasPage');
+  }
+
+   async deslogar(): Promise<any>{
+    UsuarioProvider.RemoveLogin();
+    await this.LoadingCtrl.create({
+      content: 'Deslogando...',
+      duration: 1000
+    }).present();
+     this.navCtrl.setRoot('LoginPage');
   }
 
 }

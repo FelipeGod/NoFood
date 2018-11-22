@@ -27,6 +27,11 @@ export class UsuarioProvider extends ProviderBase<UsuarioModel>{
     localStorage.setItem(ConfigHelper.storageKeys.user, JSON.stringify(result.usuario));
   }
 
+  static RemoveLogin(){
+    localStorage.removeItem(ConfigHelper.storageKeys.token);
+    localStorage.removeItem(ConfigHelper.storageKeys.user);
+  }
+
   static get GetTokenAccess(): string {
     return localStorage.getItem(ConfigHelper.storageKeys.token);
   }

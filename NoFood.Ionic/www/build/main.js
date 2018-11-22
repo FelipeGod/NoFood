@@ -564,7 +564,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\felipe.schultz\Desktop\NoFood.Ionic\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\felipe.schultz\Desktop\NoFood.Ionic\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -667,6 +667,10 @@ var UsuarioProvider = /** @class */ (function (_super) {
     UsuarioProvider.RegisterLogin = function (result) {
         localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* ConfigHelper */].storageKeys.token, result.token);
         localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* ConfigHelper */].storageKeys.user, JSON.stringify(result.usuario));
+    };
+    UsuarioProvider.RemoveLogin = function () {
+        localStorage.removeItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* ConfigHelper */].storageKeys.token);
+        localStorage.removeItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* ConfigHelper */].storageKeys.user);
     };
     Object.defineProperty(UsuarioProvider, "GetTokenAccess", {
         get: function () {
@@ -831,9 +835,11 @@ var HttpProvider = /** @class */ (function () {
     HttpProvider.prototype.delete = function (url) {
         var _this = this;
         this.spinnerSrv.Show("Removendo registro...");
+        var header = this.createHeader();
         return new Promise(function (resolve) {
             if (_this.networkSrv.IsOnline) {
-                _this.http.delete(url).subscribe(function (_res) {
+                _this.http.delete(url, { headers: header })
+                    .subscribe(function (_res) {
                     _this.spinnerSrv.Hide();
                     resolve({ success: true, data: _res, err: undefined });
                 }, function (err) {
