@@ -181,8 +181,8 @@ var ProviderBase = /** @class */ (function () {
 var ConfigHelper = /** @class */ (function () {
     function ConfigHelper() {
     }
-    // public static Url: string = 'http://felipemachadodev.com.br/api/'
-    ConfigHelper.Url = '/v1/';
+    ConfigHelper.Url = 'http://felipemachadodev.com.br/api/';
+    // public static Url: string = '/v1/'
     //public static Url: string = 'http://localhost:3000/api/'
     ConfigHelper.storageKeys = {
         token: 'nofood.token',
@@ -835,9 +835,11 @@ var HttpProvider = /** @class */ (function () {
     HttpProvider.prototype.delete = function (url) {
         var _this = this;
         this.spinnerSrv.Show("Removendo registro...");
+        var header = this.createHeader();
         return new Promise(function (resolve) {
             if (_this.networkSrv.IsOnline) {
-                _this.http.delete(url).subscribe(function (_res) {
+                _this.http.delete(url, { headers: header })
+                    .subscribe(function (_res) {
                     _this.spinnerSrv.Hide();
                     resolve({ success: true, data: _res, err: undefined });
                 }, function (err) {

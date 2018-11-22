@@ -114,6 +114,34 @@ var AdmCategoriaPage = /** @class */ (function () {
         else
             this.categoria = new __WEBPACK_IMPORTED_MODULE_4__app_models_categoriaModel__["a" /* CategoriaModel */]();
     }
+    AdmCategoriaPage.prototype.excluir = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                try {
+                    this.alertSrv.confirm('Excluir', "Deseja realmente excluir a categoria " + this.categoria.titulo, function () { return __awaiter(_this, void 0, void 0, function () {
+                        var excluirResult;
+                        return __generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0: return [4 /*yield*/, this.categoriaSrv.delete(this.categoria._id)];
+                                case 1:
+                                    excluirResult = _a.sent();
+                                    if (excluirResult.success) {
+                                        this.alertSrv.toast('Categoria exlcuida com sucesso!', 'bottom');
+                                        this.navCtrl.setRoot('AdmCategoriasPage');
+                                    }
+                                    return [2 /*return*/];
+                            }
+                        });
+                    }); });
+                }
+                catch (error) {
+                    console.log('Erro ao excluir', error);
+                }
+                return [2 /*return*/];
+            });
+        });
+    };
     AdmCategoriaPage.prototype.salvar = function () {
         return __awaiter(this, void 0, void 0, function () {
             var sucesso, cadastroResult, updateResult;
@@ -178,7 +206,7 @@ var AdmCategoriaPage = /** @class */ (function () {
     };
     AdmCategoriaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-adm-categoria',template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\pages\adm-categoria\adm-categoria.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Categoria</ion-title>\n    <ion-buttons right>\n      <button ion-button clear (click)="salvar()">\n        Salvar\n      </button>\n      <button ion-button icon-only>\n        <ion-icon name="trash"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content no-padding>\n  <ion-list no-lines>\n    <ion-item>\n      <ion-label floating>Título</ion-label>\n      <ion-input [(ngModel)]="categoria.titulo" type="text"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label floating>Descrição</ion-label>\n      <ion-textarea [(ngModel)]="categoria.descricao" rows="4"></ion-textarea>\n    </ion-item>\n    <ion-item text-center>\n      <button ion-button clear (click)="getPictureOption()">\n        <ion-icon name="camera" item-left></ion-icon>\n        Selecionar Foto\n      </button>\n    </ion-item>\n    <ion-item *ngIf="categoria.foto">\n      <img [src]="categoria.foto">\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\pages\adm-categoria\adm-categoria.html"*/,
+            selector: 'page-adm-categoria',template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\pages\adm-categoria\adm-categoria.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Categoria</ion-title>\n    <ion-buttons right>\n      <button ion-button clear (click)="salvar()">\n        Salvar\n      </button>\n      <button *ngIf=\'categoria._id\' ion-button icon-only (click)=\'excluir()\'>\n        <ion-icon name="trash"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content no-padding>\n  <ion-list no-lines>\n    <ion-item>\n      <ion-label floating>Título</ion-label>\n      <ion-input [(ngModel)]="categoria.titulo" type="text"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label floating>Descrição</ion-label>\n      <ion-textarea [(ngModel)]="categoria.descricao" rows="4"></ion-textarea>\n    </ion-item>\n    <ion-item text-center>\n      <button ion-button clear (click)="getPictureOption()">\n        <ion-icon name="camera" item-left></ion-icon>\n        Selecionar Foto\n      </button>\n    </ion-item>\n    <ion-item *ngIf="categoria.foto">\n      <img [src]="categoria.foto">\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\pages\adm-categoria\adm-categoria.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavParams */],
