@@ -10,6 +10,9 @@
 </ion-header>
 <ion-content no-padding>
   <ion-list lines>
+    <ion-item text-wrap *ngIf='categoria'>
+      Você não tem nenhuma categoria
+    </ion-item>
     <ion-item *ngFor="let item of lista" text-wrap (click)="addOrEdit(item)">
       {{ item.titulo }}
     </ion-item>
