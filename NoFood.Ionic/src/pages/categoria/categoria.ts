@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+/**
+ * Generated class for the CategoriaPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
 @IonicPage()
 @Component({
   selector: 'page-categoria',
@@ -15,7 +22,7 @@ export class CategoriaPage {
     console.log('ionViewDidLoad CategoriaPage');
   }
 
-  gerenciarCategoria(): void{
+  gerenciarCategoria(): void {
     this.navCtrl.push('AdmCategoriasPage');
   }
 

@@ -33,9 +33,8 @@ usuarioController.prototype.post = async (req, res) => {
     }
 
     //Criptografa a senha do usuário
-    if (req.body.senha) {
+    if (req.body.senha)
         req.body.senha = md5(req.body.senha);
-    }
 
     ctrlBase.post(_repo, _validationContract, req, res);
 };

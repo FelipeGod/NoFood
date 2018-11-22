@@ -1,0 +1,30 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "br.com.rsitecnologia.nofood"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "br.com.rsitecnologia.nofood"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "br.com.rsitecnologia.nofood"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "br.com.rsitecnologia.nofood"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "br.com.rsitecnologia.nofood"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "br.com.rsitecnologia.nofood"
+    }
+  },
+  "dependent_plugins": {}
+}
