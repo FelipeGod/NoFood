@@ -86,47 +86,51 @@ webpackEmptyAsyncContext.id = 115;
 var map = {
 	"../pages/adm-categoria/adm-categoria.module": [
 		284,
-		13
+		1
 	],
 	"../pages/adm-categorias/adm-categorias.module": [
 		285,
-		22
+		24
 	],
 	"../pages/adm-produto/adm-produto.module": [
 		306,
-		21
+		23
+	],
+	"../pages/adm-produtos/adm-produtos.module": [
+		308,
+		9
 	],
 	"../pages/cadastro/cadastro.module": [
 		286,
-		12
+		0
 	],
 	"../pages/categoria/categoria.module": [
 		287,
-		20
+		8
 	],
 	"../pages/login/login.module": [
 		288,
-		19
+		7
 	],
 	"../pages/meus-pedidos/meus-pedidos.module": [
 		289,
-		18
+		6
 	],
 	"../pages/minha-conta/minha-conta.module": [
 		290,
-		17
+		5
 	],
 	"../pages/produtos/produtos.module": [
 		291,
-		16
+		4
 	],
 	"../pages/tab-categoria/tab-categoria.module": [
 		292,
-		15
+		3
 	],
 	"../pages/tabs/tabs.module": [
 		293,
-		14
+		2
 	]
 };
 function webpackAsyncContext(req) {

@@ -1,4 +1,4 @@
-webpackJsonp([21],{
+webpackJsonp([23],{
 
 /***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -56,6 +56,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+/**
+ * Generated class for the AdmProdutoPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 var AdmProdutoPage = /** @class */ (function () {
     function AdmProdutoPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
@@ -68,10 +74,9 @@ var AdmProdutoPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-adm-produto',template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\pages\adm-produto\adm-produto.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>admProduto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\pages\adm-produto\adm-produto.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], AdmProdutoPage);
     return AdmProdutoPage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=adm-produto.js.map
@@ -79,4 +84,4 @@ var AdmProdutoPage = /** @class */ (function () {
 /***/ })
 
 });
-//# sourceMappingURL=21.js.map
+//# sourceMappingURL=23.js.map

@@ -1,14 +1,14 @@
-webpackJsonp([9],{
+webpackJsonp([24],{
 
-/***/ 308:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdmProdutosPageModule", function() { return AdmProdutosPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdmCategoriasPageModule", function() { return AdmCategoriasPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adm_produtos__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adm_categorias__ = __webpack_require__(296);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,31 +18,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AdmProdutosPageModule = /** @class */ (function () {
-    function AdmProdutosPageModule() {
+var AdmCategoriasPageModule = /** @class */ (function () {
+    function AdmCategoriasPageModule() {
     }
-    AdmProdutosPageModule = __decorate([
+    AdmCategoriasPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__adm_produtos__["a" /* AdmProdutosPage */],
+                __WEBPACK_IMPORTED_MODULE_2__adm_categorias__["a" /* AdmCategoriasPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__adm_produtos__["a" /* AdmProdutosPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__adm_categorias__["a" /* AdmCategoriasPage */]),
             ],
         })
-    ], AdmProdutosPageModule);
-    return AdmProdutosPageModule;
+    ], AdmCategoriasPageModule);
+    return AdmCategoriasPageModule;
 }());
 
-//# sourceMappingURL=adm-produtos.module.js.map
+//# sourceMappingURL=adm-categorias.module.js.map
 
 /***/ }),
 
-/***/ 309:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdmProdutosPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdmCategoriasPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_categoria_categoria__ = __webpack_require__(206);
@@ -93,15 +93,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-var AdmProdutosPage = /** @class */ (function () {
-    function AdmProdutosPage(navCtrl, navParams, categoriaSrv) {
+var AdmCategoriasPage = /** @class */ (function () {
+    function AdmCategoriasPage(navCtrl, navParams, categoriaSrv) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.categoriaSrv = categoriaSrv;
         this.lista = new Array();
         this._loadData();
     }
-    AdmProdutosPage.prototype._loadData = function () {
+    AdmCategoriasPage.prototype._loadData = function () {
         return __awaiter(this, void 0, void 0, function () {
             var categoriaResult;
             return __generator(this, function (_a) {
@@ -117,22 +117,23 @@ var AdmProdutosPage = /** @class */ (function () {
             });
         });
     };
-    AdmProdutosPage.prototype.addOrEdit = function (model) {
+    AdmCategoriasPage.prototype.addOrEdit = function (model) {
         this.navCtrl.push('AdmCategoriaPage', { _categoria: model });
     };
-    AdmProdutosPage = __decorate([
+    AdmCategoriasPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-adm-produtos',template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\pages\adm-produtos\adm-produtos.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Produtos</ion-title>\n    <ion-buttons right>\n      <button ion-button icon-only (click)="addOrEdit({})">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content no-padding>\n  <ion-list lines>\n    <ion-item text-wrap *ngIf=\'lista.length == 0\'>\n      Você não tem nenhum produto cadastrado\n    </ion-item>\n    <ion-item *ngFor="let item of lista" text-wrap (click)="addOrEdit(item)">\n      {{ item.titulo }}\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\pages\adm-produtos\adm-produtos.html"*/,
+            selector: 'page-adm-categorias',template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\pages\adm-categorias\adm-categorias.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Categorias</ion-title>\n    <ion-buttons right>\n      <button ion-button icon-only (click)="addOrEdit({})">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content no-padding>\n  <ion-list lines>\n    <ion-item text-wrap *ngIf=\'lista.length == 0\'>\n      Você não tem nenhuma categoria cadastrada\n    </ion-item>\n    <ion-item *ngFor="let item of lista" text-wrap (click)="addOrEdit(item)">\n      {{ item.titulo }}\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\pages\adm-categorias\adm-categorias.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_categoria_categoria__["a" /* CategoriaProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_categoria_categoria__["a" /* CategoriaProvider */]) === "function" && _c || Object])
-    ], AdmProdutosPage);
-    return AdmProdutosPage;
-    var _a, _b, _c;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_categoria_categoria__["a" /* CategoriaProvider */]])
+    ], AdmCategoriasPage);
+    return AdmCategoriasPage;
 }());
 
-//# sourceMappingURL=adm-produtos.js.map
+//# sourceMappingURL=adm-categorias.js.map
 
 /***/ })
 
 });
-//# sourceMappingURL=9.js.map
+//# sourceMappingURL=24.js.map
