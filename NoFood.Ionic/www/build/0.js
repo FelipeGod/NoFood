@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroPageModule", function() { return CadastroPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro__ = __webpack_require__(303);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,14 +38,14 @@ var CadastroPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 302:
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_alert_alert__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_usuario_usuario__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_models_usuarioModel__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_models_usuarioModel__ = __webpack_require__(304);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(28);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -127,7 +127,7 @@ var CadastroPage = /** @class */ (function () {
     };
     CadastroPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["m" /* Component */])({
-            selector: 'page-cadastro',template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\pages\cadastro\cadastro.html"*/'<ion-content padding class="backImage">\n  <div class="logo">\n    <img src="/assets/imagens/icon-branco.png" alt="">\n    <span>NoFood</span>\n  </div>\n  <ion-list no-lines class="list-transparent">\n    <ion-item>\n      <ion-input [(ngModel)]="usuario.nome" type="text" placeholder="Nome"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-input [(ngModel)]="usuario.email" type="text" placeholder="E-mail"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-input [(ngModel)]="usuario.senha" type="password" placeholder="Senha"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-input [(ngModel)]="usuario.senhaConfirmacao" type="password" placeholder="Confirmação da Senha"></ion-input>\n    </ion-item>\n  </ion-list>\n  <ion-grid>\n    <ion-row>\n      <button ion-button block round color="secondary" (click)="cadastrar()">\n        Cadastrar\n      </button>\n    </ion-row>\n    <ion-row>\n      <button ion-button block outline round color="secondary" (click)="cancelar()">\n        Cancelar\n      </button>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\pages\cadastro\cadastro.html"*/,
+            selector: 'page-cadastro',template:/*ion-inline-start:"E:\git\NoFood\NoFood.Ionic\src\pages\cadastro\cadastro.html"*/'<ion-content padding class="backImage">\n\n  <div class="logo">\n\n    <img src="/assets/imagens/icon-branco.png" alt="">\n\n    <span>NoFood</span>\n\n  </div>\n\n  <ion-list no-lines class="list-transparent">\n\n    <ion-item>\n\n      <ion-input [(ngModel)]="usuario.nome" type="text" placeholder="Nome"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-input [(ngModel)]="usuario.email" type="text" placeholder="E-mail"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-input [(ngModel)]="usuario.senha" type="password" placeholder="Senha"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-input [(ngModel)]="usuario.senhaConfirmacao" type="password" placeholder="Confirmação da Senha"></ion-input>\n\n    </ion-item>\n\n  </ion-list>\n\n  <ion-grid>\n\n    <ion-row>\n\n      <button ion-button block round color="secondary" (click)="cadastrar()">\n\n        Cadastrar\n\n      </button>\n\n    </ion-row>\n\n    <ion-row>\n\n      <button ion-button block outline round color="secondary" (click)="cancelar()">\n\n        Cancelar\n\n      </button>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"E:\git\NoFood\NoFood.Ionic\src\pages\cadastro\cadastro.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["j" /* NavParams */],
@@ -141,7 +141,7 @@ var CadastroPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 303:
+/***/ 304:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

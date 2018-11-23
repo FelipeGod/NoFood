@@ -86,7 +86,7 @@ webpackEmptyAsyncContext.id = 117;
 var map = {
 	"../pages/adm-categoria/adm-categoria.module": [
 		285,
-		1
+		2
 	],
 	"../pages/adm-categorias/adm-categorias.module": [
 		286,
@@ -94,11 +94,11 @@ var map = {
 	],
 	"../pages/adm-produto/adm-produto.module": [
 		287,
-		10
+		1
 	],
 	"../pages/adm-produtos/adm-produtos.module": [
 		288,
-		9
+		10
 	],
 	"../pages/cadastro/cadastro.module": [
 		289,
@@ -106,31 +106,31 @@ var map = {
 	],
 	"../pages/categoria/categoria.module": [
 		290,
-		8
+		9
 	],
 	"../pages/login/login.module": [
 		291,
-		7
+		8
 	],
 	"../pages/meus-pedidos/meus-pedidos.module": [
 		292,
-		6
+		7
 	],
 	"../pages/minha-conta/minha-conta.module": [
 		293,
-		5
+		6
 	],
 	"../pages/produtos/produtos.module": [
 		294,
-		4
+		5
 	],
 	"../pages/tab-categoria/tab-categoria.module": [
 		295,
-		3
+		4
 	],
 	"../pages/tabs/tabs.module": [
 		296,
-		2
+		3
 	]
 };
 function webpackAsyncContext(req) {
@@ -574,7 +574,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\git\NoFood\NoFood.Ionic\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"E:\git\NoFood\NoFood.Ionic\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);

@@ -1,14 +1,14 @@
 webpackJsonp([8],{
 
-/***/ 290:
+/***/ 291:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriaPageModule", function() { return CategoriaPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categoria__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(306);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CategoriaPageModule = /** @class */ (function () {
-    function CategoriaPageModule() {
+var LoginPageModule = /** @class */ (function () {
+    function LoginPageModule() {
     }
-    CategoriaPageModule = __decorate([
+    LoginPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__categoria__["a" /* CategoriaPage */],
+                __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__categoria__["a" /* CategoriaPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
             ],
         })
-    ], CategoriaPageModule);
-    return CategoriaPageModule;
+    ], LoginPageModule);
+    return LoginPageModule;
 }());
 
-//# sourceMappingURL=categoria.module.js.map
+//# sourceMappingURL=login.module.js.map
 
 /***/ }),
 
-/***/ 304:
+/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriaPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_usuario_usuario__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(28);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -93,48 +93,46 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-var CategoriaPage = /** @class */ (function () {
-    function CategoriaPage(navCtrl, navParams, LoadingCtrl) {
+var LoginPage = /** @class */ (function () {
+    function LoginPage(navCtrl, navParams, usuarioSrv) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.LoadingCtrl = LoadingCtrl;
+        this.usuarioSrv = usuarioSrv;
+        this.form = {};
     }
-    CategoriaPage.prototype.gerenciarCategoria = function () {
-        this.navCtrl.push('AdmCategoriasPage');
-    };
-    CategoriaPage.prototype.gerenciarProduto = function () {
-        this.navCtrl.push('AdmProdutosPage');
-    };
-    CategoriaPage.prototype.deslogar = function () {
+    LoginPage.prototype.login = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        __WEBPACK_IMPORTED_MODULE_0__providers_usuario_usuario__["a" /* UsuarioProvider */].RemoveLogin();
-                        return [4 /*yield*/, this.LoadingCtrl.create({
-                                content: 'Deslogando...',
-                                duration: 1000
-                            }).present()];
+                    case 0: return [4 /*yield*/, this.usuarioSrv.autenticate(this.form.email, this.form.senha)];
                     case 1:
-                        _a.sent();
-                        this.navCtrl.setRoot('LoginPage');
+                        result = _a.sent();
+                        if (result.success) {
+                            __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__["a" /* UsuarioProvider */].RegisterLogin(result.data);
+                            this.navCtrl.setRoot('CategoriaPage');
+                        }
+                        console.log(result);
                         return [2 /*return*/];
                 }
             });
         });
     };
-    CategoriaPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-categoria',template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\pages\categoria\categoria.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Categoria</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content no-padding>\n  <button ion-button block color="primary" (click)="gerenciarCategoria()">Gerenciar Categoria</button>\n  <button ion-button block color="primary" (click)="gerenciarProduto()">Gerenciar Produto</button>\n\n  <button ion-button block color=\'secondary\' (click)=\'deslogar()\'> Deslogar</button>\n</ion-content>'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\pages\categoria\categoria.html"*/,
+    LoginPage.prototype.cadastrar = function () {
+        this.navCtrl.setRoot('CadastroPage');
+    };
+    LoginPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-login',template:/*ion-inline-start:"E:\git\NoFood\NoFood.Ionic\src\pages\login\login.html"*/'<ion-content padding class="backImage">\n\n  <div class="logo">\n\n    <img src="assets/imagens/icon-branco.png" alt="">\n\n    <span>NoFood</span>\n\n  </div>\n\n\n\n  <ion-list no-lines class="list-transparent">\n\n    <ion-item>\n\n      <ion-input [(ngModel)]="form.email" type="email" placeholder="E-mail"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-input [(ngModel)]="form.senha" type="password" placeholder="Senha"></ion-input>\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <button ion-button color="secondary" block round (click)="login()">\n\n        Efetuar Login\n\n      </button>\n\n    </ion-row>\n\n    <ion-row>\n\n      <button ion-button block outline round color="secondary" (click)="cadastrar()">\n\n        Cadastrar-se\n\n      </button>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <button ion-button clear block color="light">\n\n        Administrar Cadastros\n\n      </button>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"E:\git\NoFood\NoFood.Ionic\src\pages\login\login.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* LoadingController */]])
-    ], CategoriaPage);
-    return CategoriaPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__["a" /* UsuarioProvider */]])
+    ], LoginPage);
+    return LoginPage;
 }());
 
-//# sourceMappingURL=categoria.js.map
+//# sourceMappingURL=login.js.map
 
 /***/ })
 
