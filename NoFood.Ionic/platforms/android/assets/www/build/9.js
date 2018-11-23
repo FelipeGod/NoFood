@@ -1,14 +1,14 @@
 webpackJsonp([9],{
 
-/***/ 285:
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdmCategoriasPageModule", function() { return AdmCategoriasPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriaPageModule", function() { return CategoriaPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adm_categorias__ = __webpack_require__(296);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categoria__ = __webpack_require__(305);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AdmCategoriasPageModule = /** @class */ (function () {
-    function AdmCategoriasPageModule() {
+var CategoriaPageModule = /** @class */ (function () {
+    function CategoriaPageModule() {
     }
-    AdmCategoriasPageModule = __decorate([
+    CategoriaPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__adm_categorias__["a" /* AdmCategoriasPage */],
+                __WEBPACK_IMPORTED_MODULE_2__categoria__["a" /* CategoriaPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__adm_categorias__["a" /* AdmCategoriasPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__categoria__["a" /* CategoriaPage */]),
             ],
         })
-    ], AdmCategoriasPageModule);
-    return AdmCategoriasPageModule;
+    ], CategoriaPageModule);
+    return CategoriaPageModule;
 }());
 
-//# sourceMappingURL=adm-categorias.module.js.map
+//# sourceMappingURL=categoria.module.js.map
 
 /***/ }),
 
-/***/ 296:
+/***/ 305:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdmCategoriasPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_categoria_categoria__ = __webpack_require__(206);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_usuario_usuario__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(28);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -93,45 +93,48 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-var AdmCategoriasPage = /** @class */ (function () {
-    function AdmCategoriasPage(navCtrl, navParams, categoriaSrv) {
+var CategoriaPage = /** @class */ (function () {
+    function CategoriaPage(navCtrl, navParams, LoadingCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.categoriaSrv = categoriaSrv;
-        this.lista = new Array();
-        this._loadData();
+        this.LoadingCtrl = LoadingCtrl;
     }
-    AdmCategoriasPage.prototype._loadData = function () {
+    CategoriaPage.prototype.gerenciarCategoria = function () {
+        this.navCtrl.push('AdmCategoriasPage');
+    };
+    CategoriaPage.prototype.gerenciarProduto = function () {
+        this.navCtrl.push('AdmProdutosPage');
+    };
+    CategoriaPage.prototype.deslogar = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var categoriaResult;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.categoriaSrv.get()];
+                    case 0:
+                        __WEBPACK_IMPORTED_MODULE_0__providers_usuario_usuario__["a" /* UsuarioProvider */].RemoveLogin();
+                        return [4 /*yield*/, this.LoadingCtrl.create({
+                                content: 'Deslogando...',
+                                duration: 1000
+                            }).present()];
                     case 1:
-                        categoriaResult = _a.sent();
-                        if (categoriaResult.success) {
-                            this.lista = categoriaResult.data;
-                        }
+                        _a.sent();
+                        this.navCtrl.setRoot('LoginPage');
                         return [2 /*return*/];
                 }
             });
         });
     };
-    AdmCategoriasPage.prototype.addOrEdit = function (model) {
-        this.navCtrl.push('AdmCategoriaPage', { _categoria: model });
-    };
-    AdmCategoriasPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-adm-categorias',template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\pages\adm-categorias\adm-categorias.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Categorias</ion-title>\n    <ion-buttons right>\n      <button ion-button icon-only (click)="addOrEdit({})">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content no-padding>\n  <ion-list lines>\n    <ion-item text-wrap *ngIf=\'lista.length == 0\'>\n      Você não tem nenhuma categoria\n    </ion-item>\n    <ion-item *ngFor="let item of lista" text-wrap (click)="addOrEdit(item)">\n      {{ item.titulo }}\n    </ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\pages\adm-categorias\adm-categorias.html"*/,
+    CategoriaPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
+            selector: 'page-categoria',template:/*ion-inline-start:"E:\git\NoFood\NoFood.Ionic\src\pages\categoria\categoria.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Categoria</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content no-padding>\n\n  <button ion-button block color="primary" (click)="gerenciarCategoria()">Gerenciar Categoria</button>\n\n  <button ion-button block color="primary" (click)="gerenciarProduto()">Gerenciar Produto</button>\n\n\n\n  <button ion-button block color=\'secondary\' (click)=\'deslogar()\'> Deslogar</button>\n\n</ion-content>'/*ion-inline-end:"E:\git\NoFood\NoFood.Ionic\src\pages\categoria\categoria.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_categoria_categoria__["a" /* CategoriaProvider */]])
-    ], AdmCategoriasPage);
-    return AdmCategoriasPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* LoadingController */]])
+    ], CategoriaPage);
+    return CategoriaPage;
 }());
 
-//# sourceMappingURL=adm-categorias.js.map
+//# sourceMappingURL=categoria.js.map
 
 /***/ })
 

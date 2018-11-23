@@ -57,21 +57,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var TabCategoriaPage = /** @class */ (function () {
-    function TabCategoriaPage(navCtrl, navParams, app) {
+    function TabCategoriaPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.app = app;
     }
-    TabCategoriaPage.prototype.ionViewDidLoad = function () {
-        //this.app.getRootNav().setRoot(CategoriaPage);
-    };
     TabCategoriaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-tab-categoria',template:/*ion-inline-start:"E:\git\NoFood\NoFood.Ionic\src\pages\tab-categoria\tab-categoria.html"*/'<!--\n\n  Generated template for the TabCategoriaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>tabCategoria</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"E:\git\NoFood\NoFood.Ionic\src\pages\tab-categoria\tab-categoria.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], TabCategoriaPage);
     return TabCategoriaPage;
 }());
