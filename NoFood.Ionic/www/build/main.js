@@ -86,43 +86,47 @@ webpackEmptyAsyncContext.id = 115;
 var map = {
 	"../pages/adm-categoria/adm-categoria.module": [
 		284,
-		1
+		13
 	],
 	"../pages/adm-categorias/adm-categorias.module": [
 		285,
-		9
+		22
+	],
+	"../pages/adm-produto/adm-produto.module": [
+		306,
+		21
 	],
 	"../pages/cadastro/cadastro.module": [
 		286,
-		0
+		12
 	],
 	"../pages/categoria/categoria.module": [
 		287,
-		8
+		20
 	],
 	"../pages/login/login.module": [
 		288,
-		7
+		19
 	],
 	"../pages/meus-pedidos/meus-pedidos.module": [
 		289,
-		6
+		18
 	],
 	"../pages/minha-conta/minha-conta.module": [
 		290,
-		5
+		17
 	],
 	"../pages/produtos/produtos.module": [
 		291,
-		4
+		16
 	],
 	"../pages/tab-categoria/tab-categoria.module": [
 		292,
-		3
+		15
 	],
 	"../pages/tabs/tabs.module": [
 		293,
-		2
+		14
 	]
 };
 function webpackAsyncContext(req) {
@@ -181,8 +185,8 @@ var ProviderBase = /** @class */ (function () {
 var ConfigHelper = /** @class */ (function () {
     function ConfigHelper() {
     }
-    ConfigHelper.Url = 'http://felipemachadodev.com.br/api/';
-    // public static Url: string = '/v1/'
+    // public static Url: string = 'http://felipemachadodev.com.br/api/'
+    ConfigHelper.Url = '/v1/';
     //public static Url: string = 'http://localhost:3000/api/'
     ConfigHelper.storageKeys = {
         token: 'nofood.token',
