@@ -8,6 +8,7 @@ import { CategoriaProvider } from '../../providers/categoria/categoria';
   selector: 'page-adm-categorias',
   templateUrl: 'adm-categorias.html',
 })
+
 export class AdmCategoriasPage {
 
   lista: Array<CategoriaModel> = new Array<CategoriaModel>();

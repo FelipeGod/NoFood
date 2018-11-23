@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CategoriaModel } from '../../app/models/categoriaModel';
-import { CategoriaProvider } from '../../providers/categoria/categoria';
+import { ProdutoModel } from '../../app/models/produtoModel';
+import { ProdutoProvider } from '../../providers/produto/produto';
 
 @IonicPage()
 @Component({
@@ -11,26 +11,26 @@ import { CategoriaProvider } from '../../providers/categoria/categoria';
 
 export class AdmProdutosPage {
 
-  lista: Array<CategoriaModel> = new Array<CategoriaModel>();
+  lista: Array<ProdutoModel> = new Array<ProdutoModel>();
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private categoriaSrv: CategoriaProvider) {
+    private produtoSrv: ProdutoProvider) {
 
     this._loadData();
 
   }
 
   private async _loadData(): Promise<void> {
-    let categoriaResult = await this.categoriaSrv.get();
-    if (categoriaResult.success) {
-      this.lista = <Array<CategoriaModel>>categoriaResult.data;
+    let produtoResult = await this.produtoSrv.get();
+    if (produtoResult.success) {
+      this.lista = <Array<ProdutoModel>>produtoResult.data;
     }
   }
 
-  addOrEdit(model?: CategoriaModel): void {
-    this.navCtrl.push('AdmCategoriaPage', { _categoria: model });
+  addOrEdit(model?: ProdutoModel): void {
+    this.navCtrl.push('AdmProdutoPage', { _produto: model });
   }
 
 }
