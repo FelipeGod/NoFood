@@ -12,20 +12,18 @@ export class CategoriaPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private UserP: UsuarioProvider,
     private LoadingCtrl: LoadingController
     ) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CategoriaPage');
-  }
-
+  
   gerenciarCategoria(): void {
     this.navCtrl.push('AdmCategoriasPage');
   }
+  gerenciarProduto(): void {
+    this.navCtrl.push('AdmProdutosPage');
+  }
 
-   async deslogar(): Promise<any>{
+  async deslogar(): Promise<any>{
     UsuarioProvider.RemoveLogin();
     await this.LoadingCtrl.create({
       content: 'Deslogando...',

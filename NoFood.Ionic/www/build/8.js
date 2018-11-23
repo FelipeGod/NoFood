@@ -1,6 +1,6 @@
 webpackJsonp([8],{
 
-/***/ 287:
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriaPageModule", function() { return CategoriaPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categoria__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categoria__ = __webpack_require__(304);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,12 +38,12 @@ var CategoriaPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 299:
+/***/ 304:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriaPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_usuario_usuario__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_usuario_usuario__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(28);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -94,17 +94,16 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 var CategoriaPage = /** @class */ (function () {
-    function CategoriaPage(navCtrl, navParams, UserP, LoadingCtrl) {
+    function CategoriaPage(navCtrl, navParams, LoadingCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.UserP = UserP;
         this.LoadingCtrl = LoadingCtrl;
     }
-    CategoriaPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CategoriaPage');
-    };
     CategoriaPage.prototype.gerenciarCategoria = function () {
         this.navCtrl.push('AdmCategoriasPage');
+    };
+    CategoriaPage.prototype.gerenciarProduto = function () {
+        this.navCtrl.push('AdmProdutosPage');
     };
     CategoriaPage.prototype.deslogar = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -126,11 +125,10 @@ var CategoriaPage = /** @class */ (function () {
     };
     CategoriaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-categoria',template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\pages\categoria\categoria.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Categoria</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content no-padding>\n  <button ion-button block color="primary" (click)="gerenciarCategoria()">Gerenciar Categoria</button>\n\n  <button ion-button block color=\'secondary\' (click)=\'deslogar()\'> Deslogar</button>\n</ion-content>'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\pages\categoria\categoria.html"*/,
+            selector: 'page-categoria',template:/*ion-inline-start:"E:\NoFood\NoFood.Ionic\src\pages\categoria\categoria.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Categoria</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content no-padding>\n  <button ion-button block color="primary" (click)="gerenciarCategoria()">Gerenciar Categoria</button>\n  <button ion-button block color="primary" (click)="gerenciarProduto()">Gerenciar Produto</button>\n\n  <button ion-button block color=\'secondary\' (click)=\'deslogar()\'> Deslogar</button>\n</ion-content>'/*ion-inline-end:"E:\NoFood\NoFood.Ionic\src\pages\categoria\categoria.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_0__providers_usuario_usuario__["a" /* UsuarioProvider */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* LoadingController */]])
     ], CategoriaPage);
     return CategoriaPage;
