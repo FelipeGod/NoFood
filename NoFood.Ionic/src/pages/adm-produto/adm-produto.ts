@@ -29,11 +29,13 @@ export class AdmProdutoPage {
     ) {
 
     let _prod = this.navParams.get('_produto');
-    if (_prod)
+    if (_prod){
       this.produto = <ProdutoModel>_prod;
-    else
+    }else{
       this.produto = new ProdutoModel();
+    }
 
+    this.loadData();
   }
 
   async excluir(): Promise<void> {
@@ -63,6 +65,18 @@ export class AdmProdutoPage {
     if (sucesso) {
       this.alertSrv.toast('Produto salva com sucesso!', 'bottom');
       this.navCtrl.setRoot('AdmProdutosPage');
+    }
+  }
+
+  async loadData(): Promise<void>{
+    try {
+      let categoriaResult = await this.categoriaSrv.get();
+      if (categoriaResult.success) {
+        this.categorias = <Array<CategoriaModel>>categoriaResult.data;
+      }
+    } catch (error) {
+      console.log('Erro ao carregar as categorias', error);
+      
     }
   }
 

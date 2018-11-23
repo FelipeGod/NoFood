@@ -113,10 +113,13 @@ var AdmProdutoPage = /** @class */ (function () {
         this.alertSrv = alertSrv;
         this.categorias = new Array();
         var _prod = this.navParams.get('_produto');
-        if (_prod)
+        if (_prod) {
             this.produto = _prod;
-        else
+        }
+        else {
             this.produto = new __WEBPACK_IMPORTED_MODULE_1__app_models_produtoModel__["a" /* ProdutoModel */]();
+        }
+        this.loadData();
     }
     AdmProdutoPage.prototype.excluir = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -174,6 +177,29 @@ var AdmProdutoPage = /** @class */ (function () {
             });
         });
     };
+    AdmProdutoPage.prototype.loadData = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var categoriaResult, error_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.categoriaSrv.get()];
+                    case 1:
+                        categoriaResult = _a.sent();
+                        if (categoriaResult.success) {
+                            this.categorias = categoriaResult.data;
+                        }
+                        return [3 /*break*/, 3];
+                    case 2:
+                        error_1 = _a.sent();
+                        console.log('Erro ao carregar as categorias', error_1);
+                        return [3 /*break*/, 3];
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
     AdmProdutoPage.prototype.getPictureOption = function () {
         var _this = this;
         var actionSheet = this.actionSheetCtrl.create({
@@ -210,7 +236,7 @@ var AdmProdutoPage = /** @class */ (function () {
     };
     AdmProdutoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["m" /* Component */])({
-            selector: 'page-adm-produto',template:/*ion-inline-start:"E:\git\NoFood\NoFood.Ionic\src\pages\adm-produto\adm-produto.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Produto</ion-title>\n\n    <ion-buttons right>\n\n      <button ion-button clear (click)="salvar()">\n\n        Salvar\n\n      </button>\n\n      <button *ngIf=\'produto._id\' ion-button icon-only (click)=\'excluir()\'>\n\n        <ion-icon name="trash"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content no-padding>\n\n  <ion-list no-lines>\n\n    <ion-item>\n\n      <ion-label floating>Título</ion-label>\n\n      <ion-input [(ngModel)]="produto.nome" type="text"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Descrição</ion-label>\n\n      <ion-textarea [(ngModel)]="produto.descricao" rows="4"></ion-textarea>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Preço</ion-label>\n\n      <ion-input [(ngModel)]="produto.preco" type="number" ></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label>Categoria</ion-label>\n\n      <ion-select [(ngModel)]="produto.categoriaId">\n\n        <ion-option value="" *ngFor=\'let item of categorias\'></ion-option>\n\n        \n\n      </ion-select>\n\n    </ion-item>\n\n\n\n    <ion-item text-center>\n\n      <button ion-button clear (click)="getPictureOption()">\n\n        <ion-icon name="camera" item-left></ion-icon>\n\n        Selecionar Foto\n\n      </button>\n\n    </ion-item>\n\n\n\n    <ion-item *ngIf="produto.foto">\n\n      <img [src]="produto.foto">\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"E:\git\NoFood\NoFood.Ionic\src\pages\adm-produto\adm-produto.html"*/,
+            selector: 'page-adm-produto',template:/*ion-inline-start:"E:\git\NoFood\NoFood.Ionic\src\pages\adm-produto\adm-produto.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Produto</ion-title>\n\n    <ion-buttons right>\n\n      <button ion-button clear (click)="salvar()">\n\n        Salvar\n\n      </button>\n\n      <button *ngIf=\'produto._id\' ion-button icon-only (click)=\'excluir()\'>\n\n        <ion-icon name="trash"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content no-padding>\n\n  <ion-list no-lines>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Título</ion-label>\n\n      <ion-input [(ngModel)]="produto.nome" type="text"></ion-input>\n\n    </ion-item>\n\n    \n\n    <ion-item>\n\n      <ion-label floating>Preço</ion-label>\n\n      <ion-input [(ngModel)]="produto.preco" type="number"></ion-input>\n\n    </ion-item>\n\n\n\n    <br>\n\n    \n\n    <ion-item>\n\n      <ion-label>Categoria</ion-label>\n\n      <ion-select [(ngModel)]="produto.categoriaId">\n\n        <ion-option value="{{item._id}}" *ngFor=\'let item of categorias\'>{{item.titulo}}</ion-option>\n\n        \n\n      </ion-select>\n\n    </ion-item>\n\n    \n\n    <ion-item>\n\n      <ion-label floating>Descrição</ion-label>\n\n      <ion-textarea [(ngModel)]="produto.descricao" rows="4"></ion-textarea>\n\n    </ion-item>\n\n\n\n    <ion-item text-center>\n\n      <button ion-button clear (click)="getPictureOption()">\n\n        <ion-icon name="camera" item-left></ion-icon>\n\n        Selecionar Foto\n\n      </button>\n\n    </ion-item>\n\n\n\n    <ion-item *ngIf="produto.foto">\n\n      <img [src]="produto.foto">\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"E:\git\NoFood\NoFood.Ionic\src\pages\adm-produto\adm-produto.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* ActionSheetController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["k" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["k" /* Platform */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__["a" /* CameraProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__["a" /* CameraProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__providers_produto_produto__["a" /* ProdutoProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_produto_produto__["a" /* ProdutoProvider */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__providers_categoria_categoria__["a" /* CategoriaProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__providers_categoria_categoria__["a" /* CategoriaProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_2__providers_alert_alert__["a" /* AlertProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_alert_alert__["a" /* AlertProvider */]) === "function" && _h || Object])
     ], AdmProdutoPage);

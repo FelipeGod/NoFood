@@ -5,6 +5,7 @@ export class ProdutoModel {
     preco: number;
     foto: string;
     ativo: boolean;
+    categoriaId: string;
 }
 
 // nome: { type: String, required: true, trim: true, index: true },
