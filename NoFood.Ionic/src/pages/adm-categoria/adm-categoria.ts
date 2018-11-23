@@ -1,4 +1,3 @@
-import { HttpResultModel } from './../../app/models/HttpResultModel';
 import { AlertProvider } from './../../providers/alert/alert';
 import { CategoriaProvider } from './../../providers/categoria/categoria';
 import { Component } from '@angular/core';
